@@ -1,10 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
@@ -204,21 +204,58 @@ main {
 }
 
 /* OUR SERVICES */
-.content-service h1 {
+.service-container h1 {
   text-align: center;
+  color: var(--title-color);
+  font-size: var(--title-font);
 }
 
 .fitur {
   display: flex;
   margin: 5rem;
+  gap: 2rem;
 }
 
 .fitur .list-fitur {
   text-align: center;
+
+  /* Border Scan, Store, Planting */
+  border: 5px solid var(--main-color);
+  border-radius: 1rem;
+  padding: 1rem;
 }
 
-.content-visi-misi {
+.list-fitur i {
+  color: var(--main-color);
+}
+
+.list-fitur h2 {
+  color: var(--title-color);
+  font-size: var(--subheading-font);
+}
+
+.list-fitur p {
+  color: var(--text-color);
+  font-size: var(--p-font);
+}
+
+/* VISION & MISSION */
+.visi-misi-container {
   width: 100%;
   display: flex;
   padding: 5rem;
+}
+
+.describtion h1 {
+  color: var(--title-color);
+  font-size: var(--title-font);
+}
+
+.describtion h2 {
+  color: var(--title-color);
+  font-size: var(--subheading-font);
+}
+
+.describtion p {
+  color: var(--text-color);
 }
