@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
@@ -29,6 +29,7 @@ body {
   height: 100vh;
 }
 
+/* NAVIGATION BAR */
 header {
   position: relative;
 }
@@ -122,7 +123,6 @@ nav {
 
 .header-button p {
   font-weight: 500;
-  /* display: none; */
 }
 
 .header-button .line-header {
@@ -137,45 +137,73 @@ nav {
   display: none;
 }
 
+/* HOME */
 main {
   flex: 1;
-  font-size: 24px;
+  padding: 120px 10%;
 }
 
-.content-home {
-  display: flex;
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+  align-items: center;
   width: 100%;
-  padding: 5rem;
+  gap: 2rem;
 }
 
-.content-home .description {
-  width: 60%;
+.home-description h1 {
+  font-size: var(--title-font);
+  color: var(--title-color);
 }
 
-h1,
-p {
-  margin-bottom: 2rem;
+.home-description p {
+  margin: 15px 0 50px;
+  font-size: var(--p-font);
+  color: var(--text-color);
 }
 
-button {
-  width: 30%;
-  border: #207a39 solid;
-  border-radius: 10px;
-  font-size: 24px;
-  color: #207a39;
-  font-weight: bold;
-  padding: 1rem;
+.home-btn {
+  display: flex;
+  gap: 30px;
 }
 
-.image-content {
-  width: 40%;
-  text-align: center;
+.btn {
+  padding: 13px 60px;
+  color: var(--secondary-color);
+  background: var(--main-color);
+  border-radius: 13px;
+  font-size: var(--p-font);
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.5s ease;
 }
 
-.image-content img {
-  width: 80%;
+.btn-1:hover {
+  transform: scale(1.1);
 }
 
+.btn-2 {
+  background: none;
+  color: var(--main-color);
+  border: 4px solid var(--main-color);
+}
+
+.btn-2:hover {
+  background: var(--main-color);
+  color: var(--secondary-color);
+}
+
+.home-img {
+  display: flex;
+  justify-content: center;
+}
+
+.home-img img {
+  width: 70%;
+  height: auto;
+}
+
+/* OUR SERVICES */
 .content-service h1 {
   text-align: center;
 }
@@ -194,10 +222,3 @@ button {
   display: flex;
   padding: 5rem;
 }
-
-/* Styling Home Page Disini */
-
-
-
-
-/* Kalo udh kelar, langsung.... */
