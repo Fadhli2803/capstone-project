@@ -1,8 +1,4 @@
 @media (max-width: 1500px) {
-  .navbar-container ul {
-    /* display: none; */
-  }
-
   .navbar-container ul #desktop-navbar {
     /* display: none; */
     /* background-color: lightblue;
