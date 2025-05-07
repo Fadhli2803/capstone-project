@@ -1,56 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS Link -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="styles.css" />
+    <!-- <link rel="stylesheet" href="responsive.css" /> -->
     <!-- Box Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 
-    <link rel="icon" type="image/png" href="images/biorezLogo.png"/>
+    <link rel="icon" type="image/png" href="images/biorezLogo.png" />
     <title>BIOREZ Website</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header-background"></div>
-        <nav id="nav-element">
-            <div class="navbar-container" id="navbar-container">
-                <div class="logo-container">
-                    <div class="logo">
-                        <img src="images/biorezLogo.png" alt="BIOREZ-logo" class="logo-image">
-                        <h2 class="logo-name">BIOREZ</h2>
-                    </div>
-                    <p id="close-button">X</p>
-                </div>
-
-                <ul>
-                    <li id="desktop-navbar">
-                        <a href="#/home" class="active">Home</a>
-                        <a href="#/services" class="inactive">Our Services</a>
-                        <a href="#/vision-mission" class="inactive">Vision & Mission</a>
-                        <a href="#/shop" class="inactive">Scan</a>
-                        <a href="#/contact" class="inactive">Contact</a>
-                    </li>
-                </ul>
-
-                <div class="header-button">
-                    <i class='bx bx-cart'></i>
-                    <p>Shop</p>
-                    <div class="line-header"></div>
-                    <i class='bx bx-menu' id="hamburger-button"></i>
-                </div>
+      <div class="header-background"></div>
+      <nav id="nav-element">
+        <div class="navbar-container" id="navbar-container">
+          <div class="logo-container">
+            <div class="logo">
+              <img src="images/biorezLogo.png" alt="BIOREZ-logo" class="logo-image" />
+              <h2 class="logo-name">BIOREZ</h2>
             </div>
-        </nav>
+            <p id="close-button">X</p>
+          </div>
+
+          <ul>
+            <li id="desktop-navbar">
+              <a href="?#home" class="active">Home</a>
+              <a href="?#services" class="inactive">Our Services</a>
+              <a href="?#vision-mission" class="inactive">Vision & Mission</a>
+              <a href="?#shop" class="inactive">Scan</a>
+              <a href="?#contact" class="inactive">Contact</a>
+            </li>
+          </ul>
+
+          <div class="header-button">
+            <i class="bx bx-cart"></i>
+            <p>Shop</p>
+            <div class="line-header"></div>
+            <i class="bx bx-menu" id="hamburger-button"></i>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <section id="home">
-            <!-- Edit Home Page Disini -->
-        </section>
+      <section id="home">
+        <div class="content-home">
+          <div class="description">
+            <h1>Judul</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi quisquam iusto quos delectus, neque minima error fuga id in laboriosam magnam reprehenderit provident doloribus maxime praesentium pariatur beatae blanditiis ut.
+            </p>
+
+            <button>Shop</button>
+            <button>Explore</button>
+          </div>
+
+          <div class="image-content">
+            <img src="./images/biorezLogo.png" alt="image-content" />
+            <caption>
+              Caption
+            </caption>
+          </div>
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="content-service">
+          <h1>Our Service</h1>
+
+          <div class="fitur">
+            <div class="list-fitur">
+              <h2>Scan</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="list-fitur">
+              <h2>Store</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="list-fitur">
+              <h2>Planting</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="vision-mission">
+        <div class="content-visi-misi">
+          <div class="image-content">
+            <img src="./images/biorezLogo.png" alt="image-content" />
+            <caption>
+              Caption
+            </caption>
+          </div>
+
+          <div class="describtion">
+            <h1>Our Vision & Mission</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laboriosam voluptatum, sed eveniet recusandae</p>
+
+            <h2>Vision</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laboriosam voluptatum, sed eveniet recusandae</p>
+
+            <h2>Mission</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laboriosam voluptatum, sed eveniet recusandae</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
