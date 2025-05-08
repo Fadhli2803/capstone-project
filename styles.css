@@ -143,6 +143,10 @@ main {
   padding: 120px 10%;
 }
 
+section {
+  margin-bottom: 150px;
+}
+
 .home-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
