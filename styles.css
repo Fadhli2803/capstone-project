@@ -49,6 +49,8 @@ nav {
 }
 
 .navbar-container {
+  position: relative;
+
   width: 85%;
   height: 110px;
   background-color: var(--secondary-color);
@@ -80,24 +82,29 @@ nav {
   display: none;
 }
 
-.navbar-container ul li {
+.navbar-container #nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container #nav-menu li {
   display: flex;
   gap: 40px;
 }
 
-.navbar-container ul li a {
+.navbar-container #nav-menu li a {
   font-size: 22px;
   font-weight: 500;
   color: var(--text-color);
   transition: 0.3s ease-in-out;
 }
 
-.navbar-container ul li .inactive:hover {
+.navbar-container #nav-menu li .inactive:hover {
   color: var(--title-color);
   text-shadow: 0 0 2px var(--title-color);
 }
 
-.navbar-container ul li .active {
+.navbar-container #nav-menu li .active {
   font-weight: bold;
   color: var(--title-color);
 }

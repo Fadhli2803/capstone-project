@@ -15,19 +15,41 @@
     width: 60px;
   }
 
-  .navbar-container ul li {
+  .navbar-container #nav-menu li {
     gap: 30px;
   }
   
-  .navbar-container ul li a {
+  .navbar-container #nav-menu li a {
     font-size: 21px;
   }
 }
 
 @media (max-width: 1437px) {
   /* NAVIGATION BAR */
-  .navbar-container ul li a {
-    display: none;
+  .navbar-container #nav-menu {
+    position: absolute;
+    top: 95px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 0 0 10px 10px;
+    width: 94%;
+    overflow: hidden;
+    z-index: -1;
+    transition: .5s ease-in-out;
+    background-color: var(--secondary-color);
+    box-shadow: 0px 5px 15px 1px rgba(0,0,0,0.75);
+  }
+
+  .navbar-container #nav-menu {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .navbar-container #nav-menu li {
+    flex-direction: column;
+    gap: 60px;
+    padding-block: 80px;
   }
 
   .header-button p {
