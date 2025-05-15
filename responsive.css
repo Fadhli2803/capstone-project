@@ -58,7 +58,6 @@
 
   .header-button .line-header {
     display: block;
-    /* background-color: red; */
   }
 
   .header-button #hamburger-button {
@@ -72,10 +71,6 @@
 }
 
 @media (max-width: 964px) {
-  :root {
-    --p-font: 1.1rem;
-  }
-
   /* HOME */
   .home-container {
     flex-direction: column;
@@ -107,7 +102,30 @@
   }
 }
 
-@media (max-width: 690px) {
+@media (max-width: 724px) {
+  :root {
+    --h1-font: 2.1rem;
+    --h2-font: 1.5rem;
+    --h3-font: 1.1rem;
+  }
+
+  .header-button {
+    padding: 7px 25px;
+  }
+
+  .background-section {
+    padding: 30px;
+  }
+
+  /* NAVIGATION BAR */
+  .navigation-container {
+    padding-inline: 20px;
+  }
+
+  .logo-container .logo-name {
+    font-size: 1.3rem;
+  }
+
   /* FOOTER */
   .navigation-container .footer-title {
     font-size: 1.2rem;
@@ -115,5 +133,52 @@
 
   .footer-law {
     gap: 30px;
+  }
+
+  /* SCANNER */
+  .scanner-container h1 {
+    font-size: 2rem;
+  }
+
+  .new-form__documentations__outputs {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .new-form__documentations__outputs-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .camera-btn-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --h1-font: 1.9rem;
+    --h2-font: 1.3rem;
+    --h3-font: 1rem;
+    --p-font: 0.9rem;
+  }
+
+  .header-button {
+    padding: 7px 15px;
+    gap: 5px;
+  }
+
+  /* SHOP & SCANNER*/
+  .card .item-image {
+    width: 100px;
+  }
+
+  .scanner-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .item-container,
+  .new-form__documentations__outputs {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
 }
