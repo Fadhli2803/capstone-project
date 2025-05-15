@@ -168,6 +168,14 @@
     gap: 5px;
   }
 
+  .header-button .bx-cart {
+    display: none;
+  }
+
+  .header-button .line-header {
+    display: none;
+  }
+
   /* SHOP & SCANNER*/
   .card .item-image {
     width: 100px;
@@ -180,5 +188,15 @@
   .item-container,
   .new-form__documentations__outputs {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  /* FOOTER */
+  .footer-heading .navigation-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navigation-container .contact-us-text {
+    display: none;
   }
 }
