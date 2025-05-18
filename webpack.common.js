@@ -25,6 +25,10 @@ module.exports = {
       template: path.join(__dirname, './src/camera.html'),
       filename: 'camera.html',
     }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './src/shop.html'),
+      filename: 'shop.html',
+    }),
 
     new CopyWebpackPlugin({
       patterns: [
