@@ -14,10 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
       navMenu.classList.remove("open");
     }
 
-    navMenu.querySelectorAll("a").forEach((link) => {
-      if (link.contains(event.target)) {
-        navMenu.classList.remove("open");
-      }
-    });
+    // navMenu.querySelectorAll("a").forEach((link) => {
+    //   if (link.contains(event.target)) {
+    //     navMenu.classList.remove("open");
+    //   }
+    // });
   });
 });
