@@ -176,6 +176,30 @@
     display: none;
   }
 
+  /* VISION & MISSION */
+  .visi-misi-container {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .image-content img {
+    width: 310px;
+  }
+
+  .describtion h1 {
+    font-size: var(--h1-font);
+  }
+
+  .describtion h2 {
+    font-size: var(--h2-font);
+  }
+
+  .describtion p {
+    font-size: var(--p-font);
+    text-align: justify;
+  }
+
   /* SHOP & SCANNER*/
   .card .item-image {
     width: 100px;
@@ -187,7 +211,7 @@
 
   .item-container,
   .new-form__documentations__outputs {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   }
 
   /* FOOTER */
