@@ -154,10 +154,10 @@
 
 @media (max-width: 480px) {
   :root {
-    --h1-font: 1.9rem;
-    --h2-font: 1.3rem;
-    --h3-font: 1rem;
-    --p-font: 0.9rem;
+    --h1-font: 1.7rem;
+    --h2-font: 1.2rem;
+    --h3-font: .8rem;
+    --p-font: 0.8rem;
   }
 
   .header-button {
@@ -171,6 +171,10 @@
 
   .header-button .line-header {
     display: none;
+  }
+
+  .navigation-container #nav-menu li a {
+    font-size: var(--p-font);
   }
 
   /* VISION & MISSION */
@@ -206,9 +210,8 @@
     font-size: 1.5rem;
   }
 
-  .item-container,
   .new-form__documentations__outputs {
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 
   /* FOOTER */
