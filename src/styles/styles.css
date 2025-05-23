@@ -92,11 +92,17 @@ nav {
 .navigation-container #nav-menu {
   display: flex;
   align-items: center;
+  gap: 40px;
+}
+
+.navigation-container #nav-menu.open {
+  max-height: 0;
+  padding-block: 0;
 }
 
 .navigation-container #nav-menu li {
-  display: flex;
-  gap: 40px;
+  /* display: flex;
+  gap: 40px; */
 }
 
 .navigation-container #nav-menu li a {
@@ -545,7 +551,7 @@ input {
   border: 1px solid #d4d4d4;
 
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 
   resize: vertical;
 }
