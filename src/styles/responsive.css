@@ -1,6 +1,6 @@
 @media (max-width: 1280px) {
   :root {
-    --h1-font: 2.8rem;
+    --h1-font: 2.7rem;
     --h2-font: 1.8rem;
     --h3-font: 1.4rem;
     --p-font: 1rem;
@@ -61,6 +61,15 @@
     display: block;
   }
 
+  /* VISSION & MISSION */
+  .vision-mission-image {
+    flex-basis: 40%;
+  }
+
+  .vision-mission-body {
+    flex-basis: 60%;
+  }
+
   /* FOOTER */
   .footer-content {
     gap: 15%;
@@ -87,8 +96,10 @@
     gap: 15px;
   }
 
-  .describtion p {
-    margin: 15px 0 20px;
+  /* VISSION & MISSION */
+  .visi-misi-container {
+    flex-direction: column;
+    text-align: center;
   }
 
   /* FOOTER */
@@ -128,33 +139,12 @@
     padding-inline: 20px;
   }
 
+  .navigation-container #nav-menu {
+    width: 90%;
+  }
+
   .logo-container .logo-name {
     font-size: 1.3rem;
-  }
-
-  /* VISION & MISSION */
-  .visi-misi-container {
-    display: block;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .image-content img {
-    width: 300px;
-  }
-
-  .describtion h1 {
-    font-size: var(--h1-font);
-    margin-top: 20px;
-  }
-
-  .describtion h2 {
-    font-size: var(--h2-font);
-    margin-top: 20px;
-  }
-
-  .describtion p {
-    text-align: justify;
   }
 
   /* FOOTER */
@@ -211,20 +201,15 @@
     font-size: var(--p-font);
   }
 
-  /* VISION & MISSION */
-  .image-content img {
-    width: 200px;
-  }
-
-  .describtion h1 {
+  .vision-mission-body h1 {
     font-size: var(--h1-font);
   }
 
-  .describtion h2 {
+  .vision-mission-body h2 {
     font-size: var(--h2-font);
   }
 
-  .describtion p {
+  .vision-mission-body p {
     font-size: var(--p-font);
   }
 
@@ -243,7 +228,7 @@
     border-radius: 5px;
   }
   .item-container {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 20px;
   }
 

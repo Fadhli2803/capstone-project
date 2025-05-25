@@ -202,7 +202,6 @@ main {
 .btn-1 {
   color: var(--secondary-color);
   background: var(--main-color);
-  /* width: 150px; */
 }
 
 .btn-2 {
@@ -265,27 +264,43 @@ main {
 
 /* VISION & MISSION */
 .visi-misi-container {
-  width: 100%;
   display: flex;
+  gap: 3rem;
+}
+
+.vision-mission-image {
+  flex-basis: 50%;
 }
 
 .visi-misi-container img {
-  width: 100%;
+  width: 70%;
 }
 
-.describtion h1 {
+.vision-mission-body {
+  flex-basis: 50%;
+}
+
+.vision-mission-body h1 {
   color: var(--title-color);
   font-size: var(--h1-font);
 }
 
-.describtion h2 {
+.vision-mission-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.vision-mission-body h2 {
   color: var(--title-color);
   font-size: var(--h2-font);
 }
 
-.describtion p {
-  margin: 15px 0 50px;
+.vision-mission-description p {
+  /* margin: 15px 0 50px; */
+  margin-top: .8rem;
   color: var(--text-color);
+  font-size: var(--p-font);
 }
 
 /* SHOP */
@@ -313,9 +328,6 @@ main {
   justify-content: center;
   gap: 40px;
   margin-block: 40px;
-  /* margin: 2rem; */
-  /* text-align: center; */
-  /* background-color: crimson; */
 }
 
 .filter-btn .filter-shop {
@@ -327,7 +339,6 @@ main {
   height: 55px;
   font-size: var(--p-font);
   font-weight: bold;
-  /* margin: 10px; */
 }
 
 .filter-btn .filter-active {
