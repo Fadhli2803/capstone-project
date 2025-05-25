@@ -19,7 +19,7 @@
   --title-color: #260701;
   --text-color: #774936;
   --hover-color: #59e17e;
-  --inactive-color: #CED4DA;
+  --inactive-color: #ced4da;
 
   --h1-font: 3rem;
   --h2-font: 2rem;
@@ -284,6 +284,7 @@ main {
 }
 
 .describtion p {
+  margin: 15px 0 50px;
   color: var(--text-color);
 }
 
@@ -300,7 +301,7 @@ main {
 }
 
 .search-btn .search-shop {
-  width: 40%;
+  width: 60%;
   padding: 15px;
   border: var(--main-color) solid;
   border-radius: 50px;
@@ -539,7 +540,7 @@ input {
   border: 1px solid #d4d4d4;
 
   font-size: 1rem;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 
   resize: vertical;
 }
