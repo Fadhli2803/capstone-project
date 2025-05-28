@@ -1,16 +1,7 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
-    <!-- Box Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-  </head>
-  <body>
-    <main>
-      <section id="shop" class="shop background-section">
+export default class ShopPage {
+  async render() {
+    return `
+    <section id="shop" class="shop background-section">
         <div class="shop-container">
           <h1>Our Shop</h1>
 
@@ -63,6 +54,8 @@
           </div>
         </div>
       </section>
-    </main>
-  </body>
-</html> -->
+    `;
+  }
+
+  async afterRender() {}
+}

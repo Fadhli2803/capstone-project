@@ -1,4 +1,19 @@
+// CSS imports
 import '../styles/styles.css';
 import '../styles/responsive.css';
 
-import './main.js';
+// Components
+import App from './pages/app';
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const app = new App({
+    content: document.getElementById('main-content'),
+    drawerButton: document.getElementById('hamburger-button'),
+    drawerNavigation: document.getElementById('nav-menu'),
+  });
+  await app.renderPage();
+
+  window.addEventListener('hashchange', async () => {
+    await app.renderPage();
+  });
+});

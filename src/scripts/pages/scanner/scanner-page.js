@@ -1,13 +1,9 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+export default class Scanner {
+  #form;
 
-    <title>Document</title>
-  </head>
-  <body>
-    <section id="scanner" class="scanner background-section">
+  async render() {
+    return `
+      <section id="scanner" class="scanner background-section">
       <form id="new-form" class="new-form">
         <div class="scanner-container">
           <h1>Klasifikasi Sampah</h1>
@@ -113,17 +109,18 @@
         </div>
       </form>
     </section>
+    `;
+  }
 
-    <script>
-      const form = document.getElementById("new-form");
-      const inputFileButton = document.getElementById(
-        "documentations-input-button"
-      );
-      const inputFile = document.getElementById("documentations-input");
+  async afterRender() {
+    this.#setupForm();
+  }
 
-      inputFileButton.addEventListener("click", () => {
-        inputFile.click();
-      });
-    </script>
-  </body>
-</html> -->
+  #setupForm() {
+    this.#form = document.getElementById('new-form');
+
+    document.getElementById('documentations-input-button').addEventListener('click', () => {
+      this.#form.elements.namedItem('documentations-input').click();
+    });
+  }
+}
