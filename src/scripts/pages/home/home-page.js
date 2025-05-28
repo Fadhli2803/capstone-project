@@ -11,8 +11,8 @@ export default class HomePage {
               pretium, odio vitae scelerisque aliquam, arcu dolor tempus tortor.
             </p>
             <div class="home-btn">
-              <a href="#/" class="btn btn-1">Shop</a>
-              <a href="#/" class="btn btn-2">Explore</a>
+              <a href="#/" class="button green-button">Shop</a>
+              <a href="#/" class="button white-button">Explore</a>
             </div>
           </div>
 
@@ -126,7 +126,7 @@ export default class HomePage {
             </div>
           </div>
           <div class="shop-btn">
-            <a href="#/" class="btn btn-1">All Item</a>
+            <a href="#/" class="button green-button">All Item</a>
           </div>
       </section>
     `;

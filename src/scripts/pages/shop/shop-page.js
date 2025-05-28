@@ -9,11 +9,11 @@ export default class ShopPage {
             <input id="search-shop" class="search-shop" type="search" placeholder="Search..." />
           </div>
 
-          <div class="filter-btn">
-            <button id="filter-shop" class="filter-shop filter-active">Filter 1</button>
-            <button id="filter-shop" class="filter-shop">Filter 2</button>
-            <button id="filter-shop" class="filter-shop">Filter 3</button>
-            <button id="filter-shop" class="filter-shop">Filter 4</button>
+          <div class="filter-shop-button-container">
+            <button id="filter-shop-button" class="button filter-active">Filter 1</button>
+            <button id="filter-shop-button" class="button">Filter 2</button>
+            <button id="filter-shop-button" class="button">Filter 3</button>
+            <button id="filter-shop-button" class="button">Filter 4</button>
           </div>
 
           <div class="item-container">
