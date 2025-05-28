@@ -1,5 +1,6 @@
-import { getActiveRoute } from '../routes/url-parser';
-import { routes } from '../routes/routes';
+import { getActiveRoute } from "../routes/url-parser";
+import { routes } from "../routes/routes";
+import { transitionHelper } from "../utils";
 
 export default class App {
   #content;
@@ -44,10 +45,25 @@ export default class App {
     // Get page instance
     const page = route();
 
-    this.#content.innerHTML = await page.render();
-    await page.afterRender();
+    // this.#content.innerHTML = await page.render();
+    // await page.afterRender();
 
     // scrollTo({ top: 0, behavior: 'instant' });
     // this.#setupNavigationList();
+
+
+
+
+    const transition = transitionHelper({
+      updateDOM: async () => {
+        this.#content.innerHTML = await page.render();
+        await page.afterRender();
+      },
+    });
+    transition.ready.catch(console.error);
+    // transition.updateCallbackDone.then(() => {
+    //   scrollTo({ top: 0, behavior: 'instant' });
+    //   this.#setupNavigationList();
+    // });
   }
 }

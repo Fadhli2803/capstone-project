@@ -27,6 +27,15 @@
   --p-font: 1.1rem;
 }
 
+/* Animation Preferences */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -40,6 +49,8 @@ section {
 /* NAVIGATION BAR */
 header {
   position: relative;
+
+  view-transition-name: header;
 }
 
 header .header-background {
