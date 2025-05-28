@@ -14,50 +14,24 @@
 
           <div class="new-form__documentations__container">
             <div id="camera-container" class="new-form__camera__container">
-              <video id="camera-video" class="new-form__camera__video">
-                Video stream not available.
-              </video>
-              <canvas
-                id="camera-canvas"
-                class="new-form__camera__canvas"
-              ></canvas>
+              <video id="camera-video" class="new-form__camera__video">Video stream not available.</video>
+              <canvas id="camera-canvas" class="new-form__camera__canvas"></canvas>
 
               <div class="new-form__documentations__buttons">
                 <select id="camera-select"></select>
 
                 <div class="camera-btn-container">
-                  <button
-                    id="documentations-input-button"
-                    class="btn camera-btn"
-                    type="button"
-                  >
-                    Ambil Gambar
-                  </button>
-                  <input
-                    id="documentations-input"
-                    class="new-form__documentations__input"
-                    name="documentations"
-                    type="file"
-                    accept="image/*"
-                    multiple
-                    aria-multiline="true"
-                    aria-describedby="documentations-more-info"
-                  />
-                  <button
-                    id="open-documentations-camera-button"
-                    class="btn camera-btn"
-                    type="button"
-                  >
-                    Buka Kamera
-                  </button>
+                  <button id="documentations-input-button" class="btn camera-btn" type="button">Ambil Gambar</button>
+                  <input id="documentations-input" class="new-form__documentations__input" name="documentations" type="file" accept="image/*" multiple aria-multiline="true" aria-describedby="documentations-more-info" />
+                  <button id="open-documentations-camera-button" class="btn camera-btn" type="button">Buka Kamera</button>
+                  <button id="take-picture" class="btn camera-btn" type="button">Foto</button>
                 </div>
               </div>
+              <!-- Output Foto -->
+              <ul id="camera-output" class="camera-output"></ul>
             </div>
             <div class="camera-line"></div>
-            <ul
-              id="documentations-taken-list"
-              class="new-form__documentations__outputs"
-            >
+            <ul id="documentations-taken-list" class="new-form__documentations__outputs">
               <li class="new-form__documentations__outputs-item">
                 <div class="scan-results-image">
                   <img src="images/biorezLogo.png" alt="scan-results-image" />
@@ -65,10 +39,7 @@
                 <div class="scan-results-description">
                   <h3>Nama Sampah</h3>
                   <p class="trash-type">Organik</p>
-                  <p class="trash-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent pretium, odio vitae scelerisque
-                  </p>
+                  <p class="trash-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium, odio vitae scelerisque</p>
                   <div class="delete-btn-container">
                     <button class="delete-btn">Hapus</button>
                   </div>
@@ -82,10 +53,7 @@
                 <div class="scan-results-description">
                   <h3>Nama Sampah</h3>
                   <p class="trash-type">Organik</p>
-                  <p class="trash-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent pretium, odio vitae scelerisque
-                  </p>
+                  <p class="trash-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium, odio vitae scelerisque</p>
                   <div class="delete-btn-container">
                     <button class="delete-btn">Hapus</button>
                   </div>
@@ -99,10 +67,7 @@
                 <div class="scan-results-description">
                   <h3>Nama Sampah</h3>
                   <p class="trash-type">Organik</p>
-                  <p class="trash-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Praesent pretium, odio vitae scelerisque
-                  </p>
+                  <p class="trash-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pretium, odio vitae scelerisque</p>
                   <div class="delete-btn-container">
                     <button class="delete-btn">Hapus</button>
                   </div>
@@ -115,15 +80,95 @@
     </section>
 
     <script>
-      const form = document.getElementById("new-form");
-      const inputFileButton = document.getElementById(
-        "documentations-input-button"
-      );
-      const inputFile = document.getElementById("documentations-input");
+      const form = document.getElementById('new-form');
+      const inputFileButton = document.getElementById('documentations-input-button');
+      const inputFile = document.getElementById('documentations-input');
 
-      inputFileButton.addEventListener("click", () => {
+      inputFileButton.addEventListener('click', () => {
         inputFile.click();
       });
+
+      // Fitur Camera
+      let width = 320;
+      let height = 0;
+
+      async function startup() {
+        const openCamera = document.getElementById('open-documentations-camera-button');
+        const cameraVideo = document.getElementById('camera-video');
+        const cameraCanvas = document.getElementById('camera-canvas');
+        const takenPictureButton = document.getElementById('take-picture');
+        const cameraOutputPicture = document.getElementById('camera-output');
+
+        let stream = null;
+        let cameraOn = false;
+
+        openCamera.addEventListener('click', async () => {
+          try {
+            if (!cameraOn) {
+              stream = await getStream();
+              cameraLaunch(stream);
+              openCamera.textContent = 'Tutup Kamera';
+              cameraOn = true;
+            } else {
+              if (stream) {
+                stream.getTracks().forEach((track) => track.stop());
+              }
+              cameraVideo.srcObject = null;
+              openCamera.textContent = 'Buka Kamera';
+              cameraOn = false;
+            }
+          } catch (error) {
+            console.error(error);
+            alert('Error occurred:', error.message);
+          }
+        });
+
+        function Pictures(image) {
+          cameraOutputPicture.innerHTML = `
+            <li><img src="${image}" alt="Kualifikasi Sambah"></li>
+          `;
+        }
+
+        async function getStream() {
+          try {
+            return await navigator.mediaDevices.getUserMedia({
+              video: true,
+            });
+          } catch (error) {
+            throw error;
+          }
+        }
+
+        async function cameraLaunch(stream) {
+          cameraVideo.srcObject = stream;
+          cameraVideo.play();
+        }
+
+        async function cameraTakenPicture() {
+          const context = cameraCanvas.getContext('2d');
+          cameraCanvas.width = width;
+          cameraCanvas.height = height;
+          context.drawImage(cameraVideo, 0, 0, width, height);
+
+          return cameraCanvas.toDataURL();
+        }
+
+        takenPictureButton.addEventListener('click', async () => {
+          const imageUrl = await cameraTakenPicture();
+          Pictures(imageUrl);
+        });
+
+        async function init() {
+          try {
+            const stream = await getStream();
+            cameraLaunch(stream);
+          } catch (error) {
+            console.error(error);
+            alert('Error occurred:', error.message);
+          }
+        }
+      }
+      window.onload = startup;
     </script>
   </body>
 </html>
