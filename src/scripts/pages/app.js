@@ -45,25 +45,15 @@ export default class App {
     // Get page instance
     const page = route();
 
-    // this.#content.innerHTML = await page.render();
-    // await page.afterRender();
-
-    // scrollTo({ top: 0, behavior: 'instant' });
-    // this.#setupNavigationList();
-
-
-
-
     const transition = transitionHelper({
       updateDOM: async () => {
-        this.#content.innerHTML = await page.render();
-        await page.afterRender();
+        try {
+          this.#content.innerHTML = await page.render();
+          await page.afterRender();
+        } catch (error) {
+          console.error("Error while rendering page:", error);
+        }
       },
     });
-    transition.ready.catch(console.error);
-    // transition.updateCallbackDone.then(() => {
-    //   scrollTo({ top: 0, behavior: 'instant' });
-    //   this.#setupNavigationList();
-    // });
   }
 }

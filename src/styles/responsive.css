@@ -73,14 +73,11 @@
   /* SCANNER */
   .new-form__documentations__outputs-item {
     flex-direction: column;
-    /* text-align: center; */
   }
 
   .camera-btn-container {
     flex-direction: column;
     gap: 20px;
-    /* width: 100%; */
-    /* background-color: crimson; */
   } 
 
   .documentations-buttons-container {
@@ -186,20 +183,6 @@
   .scanner-container h1 {
     font-size: 2rem;
   }
-
-  .new-form__documentations__outputs {
-    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
-  }
-
-  /* .new-form__documentations__outputs-item {
-    flex-direction: column;
-    text-align: center;
-  } */
-
-  /* .camera-btn-container {
-    flex-direction: column;
-    gap: 10px;
-  } */
 }
 
 @media (max-width: 480px) {
@@ -287,9 +270,5 @@
   .footer-heading .navigation-container {
     display: flex;
     justify-content: center;
-  }
-
-.navigation-container a {
-    display: none;
   }
 }

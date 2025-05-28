@@ -10,10 +10,10 @@ export default class ShopPage {
           </div>
 
           <div class="filter-shop-button-container">
-            <button id="filter-shop-button" class="button filter-active">Filter 1</button>
-            <button id="filter-shop-button" class="button">Filter 2</button>
-            <button id="filter-shop-button" class="button">Filter 3</button>
-            <button id="filter-shop-button" class="button">Filter 4</button>
+            <button class="filter-shop-button button filter-active">Filter 1</button>
+            <button class="filter-shop-button button">Filter 2</button>
+            <button class="filter-shop-button button">Filter 3</button>
+            <button class="filter-shop-button button">Filter 4</button>
           </div>
 
           <div class="item-container">
