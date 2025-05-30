@@ -467,7 +467,7 @@ footer {
 .footer-detail {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   justify-content: space-between;
   gap: 40px;
 }
@@ -475,7 +475,7 @@ footer {
 .footer-detail-text {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 10px;
 }
 
 .footer-detail-text h3 {
@@ -512,7 +512,7 @@ footer {
 
 .footer-law {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 70px;
 }
 
