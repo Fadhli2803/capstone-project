@@ -21,6 +21,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
     }),
+    // new HtmlWebpackPlugin({
+    //   template: path.join(__dirname, './src/cart.html'),
+    //   filename: 'cart.html',
+    // }),
 
     new CopyWebpackPlugin({
       patterns: [

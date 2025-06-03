@@ -128,30 +128,30 @@ nav {
   display: none;
 }
 
-.navigation-container #nav-menu {
+.navigation-container .nav-menu {
   display: flex;
   align-items: center;
   gap: 60px;
 }
 
-.navigation-container #nav-menu.open {
+.navigation-container .nav-menu.open {
   max-height: 0;
   padding-block: 0;
 }
 
-.navigation-container #nav-menu li a {
+.navigation-container .nav-menu li a {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--text-color);
   transition: 0.3s ease-in-out;
 }
 
-.navigation-container #nav-menu li .inactive:hover {
+.navigation-container .nav-menu li .inactive:hover {
   color: var(--title-color);
   text-shadow: 0 0 2px var(--title-color);
 }
 
-.navigation-container #nav-menu li .active {
+.navigation-container .nav-menu li .active {
   font-weight: bold;
   color: var(--title-color);
 }
@@ -356,60 +356,68 @@ main {
   color: var(--secondary-color);
 }
 
-.item-container {
+.shop-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   text-align: center;
 }
 
-.card {
+.shop-item {
   background-color: var(--secondary-color);
   padding: 30px 20px;
   border-radius: 10px;
   box-shadow: 4px 4px 10px -2px rgba(0, 0, 0, 0.75);
 }
 
-.card .item-image {
+.shop-item__image img {
   width: 60%;
 }
 
-.card .item-name {
+.shop-item__body .shop-item__name {
   color: var(--title-color);
   font-size: var(--h3-font);
   font-weight: 500;
   margin-top: 20px;
 }
 
-.card .item-description {
+.shop-item__body .shop-item__description {
   color: var(--text-color);
   font-size: var(--p-font);
-  margin: 10px 20px;
+  margin-top: 10px;
 }
 
-.card .item-price {
+.shop-item__body .shop-item__price {
   font-size: var(--h3-font);
   color: var(--main-color);
   font-weight: bold;
+  margin: 15px 0 30px;
 }
 
-.add-to-cart {
-  width: 80%;
-  height: 50px;
+.shop-item__cart-button {
+  display: inline-block;
+  width: 100%;
+  font-size: var(--p-font);
+  padding-inline: 0;
+  letter-spacing: 0;
   border-radius: 10px;
-  background-color: var(--main-color);
-  color: var(--secondary-color);
-  border: none;
-  font-weight: bold;
 }
 
-.shop-btn {
+.shop-item__cart-button i {
+  font-size: 25px;
+  margin-right: 5px;
+  vertical-align: middle;
+  /* font-weight: 900; */
+  /* margin-right: 10px; */
+}
+
+.shop-item__button {
   display: flex;
   justify-content: center;
   margin-top: 4rem;
 }
 
-.shop-btn a {
+.shop-item__button a {
   border-radius: 999px;
 }
 

@@ -1,4 +1,10 @@
+import { generateShopItemsTemplate } from '../../template';
+import * as BiorezAPI from '../../data/api';
+import ShopPresenter from './shop-presenter';
+
 export default class ShopPage {
+  #presenter = null;
+
   async render() {
     return `
     <section id="shop" class="shop background-section">
@@ -14,53 +20,30 @@ export default class ShopPage {
             <button class="filter-shop-button button">Filter 2</button>
             <button class="filter-shop-button button">Filter 3</button>
             <button class="filter-shop-button button">Filter 4</button>
-          </div>
-
-          <div class="item-container">
-            <div class="card">
-              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
-              <h3 class="item-name">Barang Bekas 1</h3>
-              <p class="item-description">Lorem ipsum dolor sit amet.</p>
-              <h3 class="item-price">Rp 50.000</h3>
-              <button type="button" class="add-to-cart button">Add to Cart</button>
-            </div>
-
-            <div class="card">
-              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
-              <h3 class="item-name">Barang Bekas 2</h3>
-              <p class="item-description">Lorem ipsum dolor sit amet.</p>
-              <h3 class="item-price">Rp 50.000</h3>
-              <button type="button" class="add-to-cart button">Add to Cart</button>
-            </div>
-
-            <div class="card">
-              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
-              <h3 class="item-name">Barang Bekas 3</h3>
-              <p class="item-description">Lorem ipsum dolor sit amet.</p>
-              <h3 class="item-price">Rp 50.000</h3>
-              <button type="button" class="add-to-cart button">Add to Cart</button>
-            </div>
-
-            <div class="card">
-              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
-              <h3 class="item-name">Barang Bekas 4</h3>
-              <p class="item-description">Lorem ipsum dolor sit amet.</p>
-              <h3 class="item-price">Rp 50.000</h3>
-              <button type="button" class="add-to-cart button">Add to Cart</button>
-            </div>
-
-            <div class="card">
-              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
-              <h3 class="item-name">Barang Bekas 5</h3>
-              <p class="item-description">Lorem ipsum dolor sit amet.</p>
-              <h3 class="item-price">Rp 50.000</h3>
-              <button type="button" class="add-to-cart button">Add to Cart</button>
-            </div>
-          </div>
+          </div
+          <div id="shop-list"></div>
         </div>
       </section>
     `;
   }
 
-  async afterRender() {}
+  async afterRender() {
+    this.#presenter = new ShopPresenter ({
+      view: this,
+      model: BiorezAPI,
+    });
+
+    await this.#presenter.initialGalleryAndMap();
+  }
+
+  populateShopItemsList(message, items) {
+    const html = items.reduce((acc, item) => {
+      return acc.concat(generateShopItemsTemplate(item));
+    }, '');
+    
+
+    document.getElementById('shop-list').innerHTML = `
+      <div class="shop-list">${html}</div>
+    `;
+  }
 }

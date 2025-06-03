@@ -11,7 +11,7 @@
     padding-inline: 40px;
   }
 
-  .navigation-container #nav-menu li {
+  .navigation-container .nav-menu li {
     gap: 28px;
   }
 }
@@ -22,7 +22,7 @@
   }
 
   /* NAVIGATION BAR */
-  .navigation-container #nav-menu {
+  .navigation-container .nav-menu {
     gap: 40px;
   }
 
@@ -41,8 +41,7 @@
     height: 40px;
     padding: 0;
   }
-
-  .item-container {
+  .shop-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -81,7 +80,7 @@
   }
 
   /* NAVIGATION BAR */
-  .navigation-container #nav-menu {
+  .navigation-container .nav-menu {
     position: absolute;
     top: 75px;
     left: 0;
@@ -104,7 +103,7 @@
     transition: 0.5s ease-in-out;
   }
 
-  .navigation-container #nav-menu li a {
+  .navigation-container .nav-menu li a {
     font-size: 1.3rem;
   }
 
@@ -184,7 +183,7 @@
     padding-inline: 20px;
   }
 
-  .navigation-container #nav-menu {
+  .navigation-container .nav-menu {
     width: 90%;
   }
 
@@ -199,13 +198,13 @@
     border-radius: 8px;
     padding: 0;
   }
-
-  .item-container {
+    /* SHOP */
+  .shop-list {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
-  .card {
+  .shop-item {
     max-width: 370px;
   }
 
@@ -261,9 +260,13 @@
     font-size: var(--p-font);
   }
 
-  /* OUR SHOP */
+  /* SHOP */
   .search-btn .search-shop {
     width: 80%;
+  }
+
+  .shop-item__cart-button i {
+    font-size: 22px;
   }
 
   .filter-shop-button-container {
@@ -277,6 +280,7 @@
     padding: 0;
   }
 
+  /* OUR SERVICE */
   .service-container h1 {
     font-size: var(--h1-font);
   }
@@ -290,7 +294,7 @@
   }
 
   /* SHOP & SCANNER*/
-  .card .item-image {
+  .shop-item__image img {
     width: 100px;
   }
 

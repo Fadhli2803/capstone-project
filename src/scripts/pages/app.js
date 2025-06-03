@@ -30,11 +30,11 @@ export default class App {
         this.#drawerNavigation.classList.remove("open");
       }
 
-      this.#drawerNavigation.querySelectorAll("a").forEach((link) => {
-        if (link.contains(event.target)) {
-          this.#drawerNavigation.classList.remove("open");
-        }
-      });
+      // this.#drawerNavigation.querySelectorAll("a").forEach((link) => {
+      //   if (link.contains(event.target)) {
+      //     this.#drawerNavigation.classList.remove("open");
+      //   }
+      // });
     });
   }
 
