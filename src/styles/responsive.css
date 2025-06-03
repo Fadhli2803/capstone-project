@@ -11,7 +11,7 @@
     padding-inline: 40px;
   }
 
-  .navigation-container #nav-menu li {
+  .navigation-container .nav-menu li {
     gap: 28px;
   }
 }
@@ -22,7 +22,7 @@
   }
 
   /* NAVIGATION BAR */
-  .navigation-container #nav-menu {
+  .navigation-container .nav-menu {
     gap: 40px;
   }
 
@@ -75,7 +75,7 @@
   }
 
   /* NAVIGATION BAR */
-  .navigation-container #nav-menu {
+  .navigation-container .nav-menu {
     position: absolute;
     top: 75px;
     left: 0;
@@ -98,7 +98,7 @@
     transition: 0.5s ease-in-out;
   }
 
-  .navigation-container #nav-menu li a {
+  .navigation-container .nav-menu li a {
     font-size: 1.3rem;
   }
 
@@ -171,7 +171,7 @@
     padding-inline: 20px;
   }
 
-  .navigation-container #nav-menu {
+  .navigation-container .nav-menu {
     width: 90%;
   }
 

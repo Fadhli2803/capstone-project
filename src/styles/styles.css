@@ -128,30 +128,30 @@ nav {
   display: none;
 }
 
-.navigation-container #nav-menu {
+.navigation-container .nav-menu {
   display: flex;
   align-items: center;
   gap: 60px;
 }
 
-.navigation-container #nav-menu.open {
+.navigation-container .nav-menu.open {
   max-height: 0;
   padding-block: 0;
 }
 
-.navigation-container #nav-menu li a {
+.navigation-container .nav-menu li a {
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--text-color);
   transition: 0.3s ease-in-out;
 }
 
-.navigation-container #nav-menu li .inactive:hover {
+.navigation-container .nav-menu li .inactive:hover {
   color: var(--title-color);
   text-shadow: 0 0 2px var(--title-color);
 }
 
-.navigation-container #nav-menu li .active {
+.navigation-container .nav-menu li .active {
   font-weight: bold;
   color: var(--title-color);
 }
