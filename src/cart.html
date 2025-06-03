@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Barang Bekas</title>
+</head>
+<body>
+  <h1>Daftar Barang</h1>
+  <ul id="shop-list"></ul>
+
+  <script>
+    const config = 'http://localhost:9000';
+
+    // Fetch semua barang
+    fetch(`${config}/shopItems`)
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById('shop-list');
+        data.data.shopItems.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <img src="${item.imageUrl}" alt="${item.itemName}" width="100" />
+            <p>${item.itemName} - Rp${item.price}</p>
+            <button onclick="deleteItem('${item.id}')">Hapus</button>
+          `;
+          list.appendChild(li);
+        });
+      });
+
+    function deleteItem(id) {
+      fetch(`${config}/shopItems/${id}`, {
+        method: 'DELETE',
+      })
+      .then(response => response.json())
+      .then(result => {
+        alert(result.message);
+        location.reload(); // Refresh halaman setelah hapus
+      });
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+
+<div class="card">
+              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
+              <h3 class="item-name">Barang Bekas 1</h3>
+              <p class="item-description">Lorem ipsum dolor sit amet.</p>
+              <h3 class="item-price">Rp 50.000</h3>
+            </div>
+
+            <div class="card">
+              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
+              <h3 class="item-name">Barang Bekas 2</h3>
+              <p class="item-description">Lorem ipsum dolor sit amet.</p>
+              <h3 class="item-price">Rp 50.000</h3>
+            </div>
+
+            <div class="card">
+              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
+              <h3 class="item-name">Barang Bekas 3</h3>
+              <p class="item-description">Lorem ipsum dolor sit amet.</p>
+              <h3 class="item-price">Rp 50.000</h3>
+            </div>
+
+            <div class="card">
+              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
+              <h3 class="item-name">Barang Bekas 4</h3>
+              <p class="item-description">Lorem ipsum dolor sit amet.</p>
+              <h3 class="item-price">Rp 50.000</h3>
+            </div>
+
+            <div class="card">
+              <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
+              <h3 class="item-name">Barang Bekas 5</h3>
+              <p class="item-description">Lorem ipsum dolor sit amet.</p>
+              <h3 class="item-price">Rp 50.000</h3>
+            </div>
+
+
+            <div class="shop-item" data-itemId="${item.id}">
+                <div class="shop-item__image">
+                    <img src="images/biorezLogo.png" alt="image-shop" class="item-image" />
+                </div>
+                <div class="shop-item__body">
+                    <h3 class="shop-item__name">${item.itemName}</h3>
+                    <p class="shop-item__description">Lorem ipsum dolor sit amet.</p>
+                    <h3 class="shop-item__price">${item.price}</h3>
+                    <div class="shop-item__cart-button">
+                        <i class="bx bx-cart"></i>
+                        <a href="#/shop" class="button green-button"></a>
+                    </div>
+                </div>
+                <div class="shop-item__button">
+                    <a href="#/shop" class="button green-button">All Items</a>
+                </div>
+            </div>

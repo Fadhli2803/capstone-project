@@ -36,7 +36,7 @@
   }
 
   /* SHOP */
-  .item-container {
+  .shop-list {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -180,12 +180,12 @@
   }
 
     /* SHOP */
-  .item-container {
+  .shop-list {
     grid-template-columns: 1fr;
     justify-items: center;
   }
 
-  .card {
+  .shop-item {
     max-width: 370px;
   }
 
@@ -241,9 +241,13 @@
     font-size: var(--p-font);
   }
 
-  /* OUR SHOP */
+  /* SHOP */
   .search-btn .search-shop {
     width: 80%;
+  }
+
+  .shop-item__cart-button i {
+    font-size: 22px;
   }
 
   .filter-shop-button-container {
@@ -256,6 +260,7 @@
     border-radius: 5px;
   }
 
+  /* OUR SERVICE */
   .service-container h1 {
     font-size: var(--h1-font);
   }
@@ -269,7 +274,7 @@
   }
 
   /* SHOP & SCANNER*/
-  .card .item-image {
+  .shop-item__image img {
     width: 100px;
   }
 
