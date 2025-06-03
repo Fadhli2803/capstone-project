@@ -20,8 +20,7 @@ export default class ShopPage {
             <button class="filter-shop-button button">Filter 2</button>
             <button class="filter-shop-button button">Filter 3</button>
             <button class="filter-shop-button button">Filter 4</button>
-          </div>
-
+          </div
           <div id="shop-list"></div>
         </div>
       </section>

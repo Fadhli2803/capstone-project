@@ -36,6 +36,11 @@
   }
 
   /* SHOP */
+  .filter-shop-button-container button {
+    width: 50%;
+    height: 40px;
+    padding: 0;
+  }
   .shop-list {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -48,7 +53,7 @@
   .camera-btn-container {
     flex-direction: column;
     gap: 20px;
-  } 
+  }
 
   .documentations-buttons-container {
     flex-direction: column;
@@ -134,6 +139,13 @@
     text-align: center;
   }
 
+  /* SHOP */
+  .filter-shop-button-container button {
+    width: 40%;
+    height: 40px;
+    padding: 0;
+  }
+
   /* FOOTER */
   .footer-content {
     flex-direction: column;
@@ -179,6 +191,13 @@
     font-size: 1.3rem;
   }
 
+  /* SHOP */
+  .filter-shop-button-container button {
+    width: 30%;
+    height: 40px;
+    border-radius: 8px;
+    padding: 0;
+  }
     /* SHOP */
   .shop-list {
     grid-template-columns: 1fr;
@@ -251,13 +270,14 @@
   }
 
   .filter-shop-button-container {
-    gap: 15px;
+    gap: 10px;
   }
 
-  .filter-btn .filter-shop {
-    width: 20%;
+  .filter-shop-button-container button {
+    width: 50%;
     height: 30px;
     border-radius: 5px;
+    padding: 0;
   }
 
   /* OUR SERVICE */

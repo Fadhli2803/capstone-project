@@ -50,7 +50,7 @@ section {
   padding: 10px 40px;
   font-weight: 600;
   letter-spacing: 1px;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   cursor: pointer;
 }
 
@@ -310,7 +310,7 @@ main {
 }
 
 .vision-mission-description p {
-  margin-top: .8rem;
+  margin-top: 0.8rem;
   color: var(--text-color);
   font-size: var(--p-font);
 }
@@ -695,16 +695,16 @@ select {
   display: inline-block;
 }
 
-.scan-results-description .trash-type .organik{
+.scan-results-description .trash-type .organik {
   color: var(--main-color);
   background-color: #207a3998;
   border: 2px solid var(--main-color);
 }
 
-.scan-results-description .trash-type .anorganik{
-  color: #FFD000;
+.scan-results-description .trash-type .anorganik {
+  color: #ffd000;
   background-color: #ffd0004a;
-  border: 2px solid #FFD000;
+  border: 2px solid #ffd000;
 }
 
 .scan-results-description .trash-description {
@@ -727,4 +727,77 @@ select {
   font-size: var(--p-font);
   font-weight: 400;
   cursor: pointer;
+}
+
+/* CART */
+.cart-container {
+  margin: 100px;
+}
+
+.cart-title {
+  margin-block: 50px;
+  text-align: center;
+}
+
+.cart-title h1 {
+  font-size: var(--h1-font);
+  color: var(--title-color);
+}
+
+.daftar-pesanan h2 {
+  font-size: var(--h2-font);
+  color: var(--title-color);
+  font-weight: normal;
+}
+
+.cart-item-container {
+  display: flex;
+  gap: 50px;
+}
+
+.cart-item {
+  display: grid;
+  gap: 20px;
+}
+
+.cart-list {
+  display: flex;
+  text-align: center;
+}
+
+.cart-img {
+  width: 300px;
+  align-content: center;
+}
+
+.price {
+  width: 450px;
+}
+
+.price h2 {
+  margin-block: 10px;
+  font-size: var(--h2-font);
+  color: var(--title-color);
+  font-weight: normal;
+}
+
+.price p {
+  font-size: var(--p-font);
+  color: var(--text-color);
+  margin-block: 20px;
+}
+
+.price hr {
+  margin-block: 20px;
+}
+
+.price button {
+  width: 100%;
+  height: 50px;
+  border-radius: 30px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  font-size: var(--h3-font);
+  font-weight: bold;
 }
