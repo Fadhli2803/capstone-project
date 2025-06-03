@@ -22,6 +22,7 @@ export default class ShopPage {
               <h3 class="item-name">Barang Bekas 1</h3>
               <p class="item-description">Lorem ipsum dolor sit amet.</p>
               <h3 class="item-price">Rp 50.000</h3>
+              <button type="button" class="add-to-cart button">Add to Cart</button>
             </div>
 
             <div class="card">
@@ -29,6 +30,7 @@ export default class ShopPage {
               <h3 class="item-name">Barang Bekas 2</h3>
               <p class="item-description">Lorem ipsum dolor sit amet.</p>
               <h3 class="item-price">Rp 50.000</h3>
+              <button type="button" class="add-to-cart button">Add to Cart</button>
             </div>
 
             <div class="card">
@@ -36,6 +38,7 @@ export default class ShopPage {
               <h3 class="item-name">Barang Bekas 3</h3>
               <p class="item-description">Lorem ipsum dolor sit amet.</p>
               <h3 class="item-price">Rp 50.000</h3>
+              <button type="button" class="add-to-cart button">Add to Cart</button>
             </div>
 
             <div class="card">
@@ -43,6 +46,7 @@ export default class ShopPage {
               <h3 class="item-name">Barang Bekas 4</h3>
               <p class="item-description">Lorem ipsum dolor sit amet.</p>
               <h3 class="item-price">Rp 50.000</h3>
+              <button type="button" class="add-to-cart button">Add to Cart</button>
             </div>
 
             <div class="card">
@@ -50,6 +54,7 @@ export default class ShopPage {
               <h3 class="item-name">Barang Bekas 5</h3>
               <p class="item-description">Lorem ipsum dolor sit amet.</p>
               <h3 class="item-price">Rp 50.000</h3>
+              <button type="button" class="add-to-cart button">Add to Cart</button>
             </div>
           </div>
         </div>
