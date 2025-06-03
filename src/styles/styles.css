@@ -730,18 +730,128 @@ select {
 }
 
 /* CART */
-.cart-container {
-  margin: 100px;
-}
-
-.cart-title {
-  margin-block: 50px;
+.cart-container h1 {
+  font-size: var(--h1-font);
+  color: var(--title-color);
+  margin-bottom: 3rem;
   text-align: center;
 }
 
-.cart-title h1 {
+.cart-list-container {
+  /* background-color: crimson; */
+  display: flex;
+  gap: 20px;
+}
+
+.cart-list {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 50%;
+  gap: 20px;
+}
+
+/* .cart-item__header h2 {
+  text-align: start;
+} */
+
+.cart-box {
+  background-color: var(--secondary-color);
+  /* padding: 10px 20px; */
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px -2px rgba(0, 0, 0, 0.75);
+}
+
+.cart-item__header {
+  padding: 13px 20px;
+}
+
+.cart-item__header h3,
+.cart-details h3
+{
+  /* color: var(--main-color); */
+  font-size: var(--h3-font);
+  font-weight: 600;
+}
+
+.cart-item {
+  display: flex;
+  gap: 2rem;
+  padding: 20px;
+}
+
+.cart-item__image img {
+  width: 100px;
+}
+
+.cart-item__body {
+  display: flex;
+  flex-direction: column;
+  /* gap: 7px; */
+}
+
+.cart-item__name {
+  font-size: var(--h3-font);
+  font-weight: 500;
+}
+
+.cart-item-description {
+  font-size: var(--p-font);
+  margin: 5px 0 20px;
+}
+
+.cart-item__price {
+  color: var(--main-color);
+}
+
+.cart-details {
+  flex-basis: 50%;
+  padding: 13px 20px 25px;
+  height: fit-content;
+}
+
+.cart-details-order-container {
+  margin: 25px 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.cart-details-order {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cart-details__name,
+.cart-details__price {
+  font-size: var(--p-font);
+}
+
+.cart-details__price {
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+.cart-details-total {
+  margin-block: 8px;
+}
+
+.cart-details__button {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  font-size: var(--p-font);
+}
+
+/* .cart-container h1 {
   font-size: var(--h1-font);
   color: var(--title-color);
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.cart-item__image img {
+  width: 50px;
 }
 
 .daftar-pesanan h2 {
@@ -765,8 +875,8 @@ select {
   text-align: center;
 }
 
-.cart-img {
-  width: 300px;
+.cart-img img {
+  width: 50px;
   align-content: center;
 }
 
@@ -800,4 +910,4 @@ select {
   color: var(--secondary-color);
   font-size: var(--h3-font);
   font-weight: bold;
-}
+} */

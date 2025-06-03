@@ -8,105 +8,90 @@
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
-    <section id="cart" class="cart">
-      <div class="cart-container background-section">
-        <div class="cart-title">
+    <main>
+      <section id="cart" class="cart">
+        <div class="cart-container background-section">
           <h1>Shopping Cart</h1>
-        </div>
 
-        <div class="cart-item-container">
-          <div class="cart-item">
-            <div class="card daftar-pesanan">
-              <h2>Daftar Pesanan</h2>
-            </div>
+          <div id="cart-list-container">
+            <div class="cart-list-container">
+              <div class="cart-list">
+                <div class="cart-box cart-item__header">
+                  <h3>Daftar Pesanan</h3>
+                </div>
 
-            <div class="card cart-list">
-              <div class="cart-img">
-                <img src="./public/images/biorezLogo.png" alt="image-shop" class="item-image" />
+                <div class="cart-box cart-item">
+                  <div class="cart-item__image">
+                    <img src="images/biorezLogo-green.png" alt="image-shop" />
+                  </div>
+
+                  <div class="cart-item__body">
+                    <h3 class="cart-item__name">Barang Bekas 1</h3>
+                    <p class="cart-item-description">
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                    <h2 class="cart-item__price">50K</h3>
+                  </div>
+                </div>
+
+                <div class="cart-box cart-item">
+                  <div class="cart-item__image">
+                    <img src="images/biorezLogo-green.png" alt="image-shop" />
+                  </div>
+
+                  <div class="cart-item__body">
+                    <h3 class="cart-item__name">Barang Bekas 1</h3>
+                    <p class="cart-item-description">
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                    <h2 class="cart-item__price">50K</h3>
+                  </div>
+                </div>
+
+                <div class="cart-box cart-item">
+                  <div class="cart-item__image">
+                    <img src="images/biorezLogo-green.png" alt="image-shop" />
+                  </div>
+
+                  <div class="cart-item__body">
+                    <h3 class="cart-item__name">Barang Bekas 1</h3>
+                    <p class="cart-item-description">
+                      Lorem ipsum dolor sit amet.
+                    </p>
+                    <h2 class="cart-item__price">50K</h3>
+                  </div>
+                </div>
               </div>
 
-              <div class="cart-description">
-                <h3 class="item-name">Barang Bekas 1</h3>
-                <p class="item-description">Lorem ipsum dolor sit amet.</p>
-                <h3 class="item-price">Rp 50.000</h3>
-              </div>
-            </div>
+              <div class="cart-box cart-details">
+                <h3>Rincian</h3>
+                <div class="cart-details-order-container">
+                  <div class="cart-details-order">
+                    <p class="cart-details__name">Barang Bekas 1</p>
+                    <p class="cart-details__price">50K</p>
+                  </div>
+                  <div class="cart-details-order">
+                    <p class="cart-details__name">Barang Bekas 2</p>
+                    <p class="cart-details__price">50K</p>
+                  </div>
+                  <div class="cart-details-order">
+                    <p class="cart-details__name">Barang Bekas 3</p>
+                    <p class="cart-details__price">50K</p>
+                  </div>
+                </div>
 
-            <div class="card cart-list">
-              <div class="cart-img">
-                <img src="./public/images/biorezLogo.png" alt="image-shop" class="item-image" />
-              </div>
-
-              <div class="cart-description">
-                <h3 class="item-name">Barang Bekas 1</h3>
-                <p class="item-description">Lorem ipsum dolor sit amet.</p>
-                <h3 class="item-price">Rp 50.000</h3>
-              </div>
-            </div>
-
-            <div class="card cart-list">
-              <div class="cart-img">
-                <img src="./public/images/biorezLogo.png" alt="image-shop" class="item-image" />
-              </div>
-
-              <div class="cart-description">
-                <h3 class="item-name">Barang Bekas 1</h3>
-                <p class="item-description">Lorem ipsum dolor sit amet.</p>
-                <h3 class="item-price">Rp 50.000</h3>
-              </div>
-            </div>
-
-            <div class="card cart-list">
-              <div class="cart-img">
-                <img src="./public/images/biorezLogo.png" alt="image-shop" class="item-image" />
-              </div>
-
-              <div class="cart-description">
-                <h3 class="item-name">Barang Bekas 1</h3>
-                <p class="item-description">Lorem ipsum dolor sit amet.</p>
-                <h3 class="item-price">Rp 50.000</h3>
-              </div>
-            </div>
-
-            <div class="card cart-list">
-              <div class="cart-img">
-                <img src="./public/images/biorezLogo.png" alt="image-shop" class="item-image" />
-              </div>
-
-              <div class="cart-description">
-                <h3 class="item-name">Barang Bekas 1</h3>
-                <p class="item-description">Lorem ipsum dolor sit amet.</p>
-                <h3 class="item-price">Rp 50.000</h3>
-              </div>
-            </div>
-
-            <div class="card cart-list">
-              <div class="cart-img">
-                <img src="./public/images/biorezLogo.png" alt="image-shop" class="item-image" />
-              </div>
-
-              <div class="cart-description">
-                <h3 class="item-name">Barang Bekas 1</h3>
-                <p class="item-description">Lorem ipsum dolor sit amet.</p>
-                <h3 class="item-price">Rp 50.000</h3>
+                <hr />
+                <div class="cart-details-order cart-details-total">
+                  <p class="cart-details__name">Total</p>
+                  <p class="cart-details__price">150K</p>
+                </div>
+                <hr />
+                <button class="button green-button cart-details__button">Beli</button>
               </div>
             </div>
           </div>
-
-          <div class="cart-price">
-            <div class="card price">
-              <h2>Rincian</h2>
-              <p>Barang Bekas 1 Rp50.000</p>
-              <p>Barang Bekas 2 Rp25.000</p>
-              <p>Barang Bekas 3 Rp75.000</p>
-              <hr />
-              <p>Total Rp150000</p>
-              <hr />
-              <button type="button">Beli</button>
-            </div>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </body>
 </html>
