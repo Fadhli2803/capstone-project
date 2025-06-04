@@ -1,5 +1,5 @@
 export function generateShopItemsTemplate(item) {
-    return `
+  return `
       <div class="shop-item" data-itemId="${item.id}">
         <div class="shop-item__image">
           <img src="images/biorezLogo-green.png" alt="image-shop" />
@@ -14,5 +14,32 @@ export function generateShopItemsTemplate(item) {
           </a>
         </div>
       </div>
-    `
+    `;
+}
+
+export function generateCartItemsTemplate(item) {
+  return `
+    <div class="cart-box cart-item">
+      <div class="cart-item__image">
+        <img src="images/biorezLogo-green.png" alt="image-shop" />
+      </div>
+        
+      <div class="cart-item__body">
+        <h3 class="cart-item__name">Barang Bekas 1</h3>
+        <p class="cart-item-description">
+          Lorem ipsum dolor sit amet.
+        </p>
+        <h2 class="cart-item__price">50K</h3>
+      </div>
+    </div>
+  `;
+}
+
+export function generateCartDetailsOrderTemplate(item) {
+  return `
+    <div class="cart-details-order">
+      <p class="cart-details__name">Barang Bekas 1</p>
+      <p class="cart-details__price">50K</p>
+    </div>
+  `
 }
