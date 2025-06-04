@@ -2,7 +2,7 @@ export function generateShopItemsTemplate(item) {
   return `
       <div class="shop-item" data-itemId="${item.id}">
         <div class="shop-item__image">
-          <img src="images/biorezLogo-green.png" alt="image-shop" />
+          <img src="${item.imageUrl}" alt="image-shop" />
         </div>
         <div class="shop-item__body">
           <h3 class="shop-item__name">${item.itemName}</h3>
@@ -21,7 +21,7 @@ export function generateCartItemsTemplate(item) {
   return `
     <div class="cart-box cart-item" data-itemId="${item.id}">
       <div class="cart-item__image">
-        <img src="images/biorezLogo-green.png" alt="image-shop" />
+        <img src="${item.imageUrl}" alt="image-shop" />
       </div>
         
       <div class="cart-item__body">
