@@ -1,28 +1,36 @@
 export default class ShopPresenter {
-    #view;
-    #model;
-  
-    constructor({ view, model }) {
-      this.#view = view;
-      this.#model = model;
-    }
+  #view;
+  #apiModel;
+  #dbModel;
 
-    async initialGalleryAndMap() {
-      try {  
-        const response = await this.#model.getAllShopItems();
-  
-        // if (response.error) {
-        //   console.error('initialGalleryAndMap: response:', response);
-        //   this.#view.populateReportsListError(response.message);
-        //   return;
-        // }
-  
-        this.#view.populateShopItemsList(response.status, response.data);
-      } catch (error) {
-        console.error('initialGalleryAndMap: error:', error);
-        // this.#view.populateReportsListError(error.status);
-      } finally {
-        // this.#view.hideLoading();
-      }
+  constructor({ view, apiModel, dbModel }) {
+    this.#view = view;
+    this.#apiModel = apiModel;
+    this.#dbModel = dbModel;
+  }
+
+  async initialGalleryAndMap() {
+    try {
+      const response = await this.#apiModel.getAllShopItems();
+      this.#view.populateShopItemsList(response.message, response.data);
+    } catch (error) {
+      console.error('initialGalleryAndMap: error:', error);
     }
+  }
+
+  async saveReport(itemId) {
+    try {
+      const report = await this.#apiModel.getShopItemById(itemId);
+
+      const reportData = {
+        id: itemId,
+        ...report.shopItem,
+      };
+
+      await this.#dbModel.putReport(reportData);
+      // this.#view.saveToBookmarkSuccessfully('Success to save to Cart');
+    } catch (error) {
+      console.error('saveReport: error:', error);
+    }
+  }
 }

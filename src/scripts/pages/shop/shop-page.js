@@ -1,6 +1,8 @@
 import { generateShopItemsTemplate } from '../../template';
 import * as BiorezAPI from '../../data/api';
+import { parseActivePathname } from '../../routes/url-parser';
 import ShopPresenter from './shop-presenter';
+import Database from '../../database';
 
 export default class ShopPage {
   #presenter = null;
@@ -29,9 +31,10 @@ export default class ShopPage {
   }
 
   async afterRender() {
-    this.#presenter = new ShopPresenter ({
+    this.#presenter = new ShopPresenter({
       view: this,
-      model: BiorezAPI,
+      apiModel: BiorezAPI,
+      dbModel: Database,
     });
 
     await this.#presenter.initialGalleryAndMap();
@@ -46,5 +49,24 @@ export default class ShopPage {
     document.getElementById('shop-list').innerHTML = `
       <div class="shop-list">${html}</div>
     `;
+
+    this.renderSaveButton();
   }
+
+  renderSaveButton() {
+  const shopList = document.getElementById('shop-list');
+
+  shopList.addEventListener('click', async (event) => {
+    const cartButton = event.target.closest('.shop-item__cart-button');
+
+    if (cartButton) {
+      const itemElement = cartButton.closest('.shop-item');
+      const itemId = itemElement?.dataset.itemid;
+
+      if (itemId) {
+        await this.#presenter.saveReport(itemId);
+      }
+    }
+  });
+}
 }

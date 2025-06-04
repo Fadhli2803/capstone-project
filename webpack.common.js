@@ -21,10 +21,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, './src/index.html'),
     }),
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, './src/chart.html'),
-      filename: 'chart.html',
-    }),
 
     new CopyWebpackPlugin({
       patterns: [

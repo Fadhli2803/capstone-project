@@ -132,6 +132,14 @@
     font-size: 1.3rem;
   }
 
+  .header-button {
+    padding: 10px 40px;
+  }
+
+  .cart-button {
+    padding: 0;
+  }
+
   .header-button p {
     display: none;
   }
@@ -238,7 +246,7 @@
     font-size: 1.2rem;
   }
 
-  .navigation-container a {
+  .navigation-container .contact-us-button {
     padding: 7px 20px;
   }
 

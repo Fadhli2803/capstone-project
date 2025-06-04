@@ -1,4 +1,10 @@
+import { generateCartDetailsOrderTemplate, generateCartItemsTemplate } from "../../template";
+import CartPresenter from "./cart-presenter"
+import Database from "../../database"
+
 export default class CartPage {
+  #presenter = null;
+
     async render() {
         return `
           <section id="cart" class="cart background-section">
@@ -11,12 +17,12 @@ export default class CartPage {
                     <h3>Daftar Pesanan</h3>
                   </div>
                 
-                  <div class="cart-list-display"></div>
+                  <div id="cart-list-display"></div>
                 </div>
               
                 <div class="cart-box cart-details">
                   <h3>Rincian</h3>
-                  <div class="cart-details-order-container"></div>
+                  <div id="cart-details-order-container"></div>
                   
                   <hr />
                   <div class="cart-details-order cart-details-total">
@@ -30,5 +36,31 @@ export default class CartPage {
             </div>
           </section>  
         `
+    }
+
+    async afterRender() {
+      this.#presenter = new CartPresenter({
+        view: this,
+        model: Database,
+      });
+      await this.#presenter.initialGalleryAndMap();
+    }
+
+    populateShopItemsList(message, items) {
+      const shopItemsHTML = items.reduce((acc, item) => {
+        return acc.concat(generateCartItemsTemplate(item));
+      }, '');
+      
+      const cartItemHTML = items.reduce((acc, item) => {
+        return acc.concat(generateCartDetailsOrderTemplate(item));
+      }, '');
+  
+      document.getElementById('cart-list-display').innerHTML = `
+        <div class="cart-list-display">${shopItemsHTML}</div>
+      `;
+      
+      document.getElementById('cart-details-order-container').innerHTML = `
+        <div class="cart-details-order-container">${cartItemHTML}</div>
+      `;
     }
 }
