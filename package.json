@@ -4,10 +4,7 @@
   "main": "index.js",
   "scripts": {    
     "start": "node ./backend/src/server.js",
-
-    "build:frontend": "webpack --config webpack.prod.js",
-    "build:backend": "node ./backend/src/server.js",
-    "build": "npm-run-all build:frontend build:backend",
+    "build": "webpack --config webpack.prod.js",
     
     "start:frontend": "webpack serve --config webpack.dev.js",
     "start:backend": "nodemon ./backend/src/server.js",
