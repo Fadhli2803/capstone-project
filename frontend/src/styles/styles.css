@@ -415,6 +415,12 @@ main {
   border-radius: 10px;
 }
 
+.shop-item__cart-button:disabled {
+  /* background-color: gray; */
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 .shop-item__cart-button i {
   font-size: 25px;
   margin-right: 5px;

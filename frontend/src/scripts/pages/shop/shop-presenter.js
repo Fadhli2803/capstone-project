@@ -22,15 +22,33 @@ export default class ShopPresenter {
     try {
       const report = await this.#apiModel.getShopItemById(itemId);
 
-      const reportData = {
+      const shopItemData = {
         id: itemId,
         ...report.shopItem,
       };
 
-      await this.#dbModel.putReport(reportData);
+      await this.#dbModel.putReport(shopItemData);
       // this.#view.saveToBookmarkSuccessfully('Success to save to Cart');
     } catch (error) {
       console.error('saveReport: error:', error);
+    }
+  }
+
+  async removeShopItem(itemId) {
+    try {
+      await this.#dbModel.removeShopItem(itemId);
+    } catch (error) {
+      console.error('removeShopItem: error:', error);
+    }
+  }
+
+  async isShopItemSaved(itemId) {
+    try {
+      const item = await this.#dbModel.getShopItemById(itemId);
+      return !!item;
+    } catch (error) {
+      console.error('isShopItemSaved: error:', error);
+      return false;
     }
   }
 }
