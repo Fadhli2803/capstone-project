@@ -2,9 +2,7 @@
   "name": "febe",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "start": "node ./backend/src/server.js",
-    
+  "scripts": {    
     "build:frontend": "webpack --config webpack.prod.js",
     "build:backend": "node ./backend/src/server.js",
     "build": "npm-run-all build:frontend build:backend",
