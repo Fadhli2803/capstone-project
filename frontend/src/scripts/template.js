@@ -8,12 +8,15 @@ export function generateShopItemsTemplate(item) {
           <h3 class="shop-item__name">${item.itemName}</h3>
           <p class="shop-item__description">Lorem ipsum dolor sit amet.</p>
           <h3 class="shop-item__price">${item.price}K</h3>
-          <button class="shop-item__cart-button button green-button">
-            <i class="bx bx-cart"></i>
-            Add to Cart
-          </button>
+          <div id="shop-item__cart-button-container" class="shop-item__cart-button-container">
+            <button class="shop-item__cart-button button green-button">
+              <i class="bx bx-cart"></i>
+              Add to Cart
+            </button>
+          </div>
         </div>
       </div>
+
     `;
 }
 
@@ -21,7 +24,7 @@ export function generateCartItemsTemplate(item) {
   return `
     <div class="cart-box cart-item" data-itemId="${item.id}">
       <div class="cart-item__close-button-container">
-        <button id="cart-item__close-button" class="cart-item__close-button">X</button>
+        <button class="cart-item__close-button">X</button>
       </div>
       <div class="cart-item__image">
         <img src="${item.imageUrl}" alt="image-shop" />
@@ -44,5 +47,23 @@ export function generateCartDetailsOrderTemplate(item) {
       <p class="cart-details__name">${item.itemName}</p>
       <p class="cart-details__price">${item.price}K</p>
     </div>
+  `
+}
+
+export function AddToCartButtonTemplate() {
+  return `
+    <button class="shop-item__cart-button button green-button">
+      <i class="bx bx-cart"></i>
+      Add to Cart
+    </button>
+  `
+}
+
+export function successAddToCartButtonTemplate() {
+  return `
+    <button class="shop-item__cart-button button green-button" disabled>
+      <i class="bx bx-cart"></i>
+      Success
+    </button>
   `
 }

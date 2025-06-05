@@ -23,5 +23,13 @@ const Database = {
   async getAllShopItems() {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
+
+  async getShopItemById(id) {
+    return (await dbPromise).get(OBJECT_STORE_NAME, id);
+  },
+
+  async removeShopItem(id) {
+    return (await dbPromise).delete(OBJECT_STORE_NAME, id);
+  },
 };
 export default Database;
