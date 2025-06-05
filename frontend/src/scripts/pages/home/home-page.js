@@ -116,7 +116,7 @@ export default class HomePage {
       const limitedItems = items.slice(0, 6);
 
       const html = limitedItems.reduce((acc, item) => {
-        return acc.concat(generateShopItemsTemplate(item));
+        return acc.concat(generateShopItemsTemplate(item, false));
       }, '');
   
       document.getElementById('shop-list').innerHTML = `
