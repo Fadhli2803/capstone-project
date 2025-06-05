@@ -785,7 +785,36 @@ select {
 .cart-item {
   display: flex;
   gap: 2rem;
+  position: relative;
   padding: 20px;
+}
+
+.cart-item__close-button-container {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 999px;
+  background-color: #E61519;
+}
+
+.cart-item__close-button {
+  width: 100%;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--secondary-color);
+  
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 .cart-item__image img {

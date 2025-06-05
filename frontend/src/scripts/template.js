@@ -20,6 +20,9 @@ export function generateShopItemsTemplate(item) {
 export function generateCartItemsTemplate(item) {
   return `
     <div class="cart-box cart-item" data-itemId="${item.id}">
+      <div class="cart-item__close-button-container">
+        <button id="cart-item__close-button" class="cart-item__close-button">X</button>
+      </div>
       <div class="cart-item__image">
         <img src="${item.imageUrl}" alt="image-shop" />
       </div>
