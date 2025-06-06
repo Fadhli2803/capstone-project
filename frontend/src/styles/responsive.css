@@ -120,8 +120,8 @@
     box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.75);
     border-radius: 0 0 10px 10px;
     width: 94%;
-    max-height: 800px;
-    padding-block: 80px;
+    max-height: 0;
+    padding-block: 0;
 
     z-index: -1;
     overflow: hidden;
@@ -130,6 +130,10 @@
 
   .navigation-container .nav-menu li a {
     font-size: 1.3rem;
+  }
+  
+  .navigation-container .nav-menu li .active {
+    border-bottom: none;
   }
 
   .header-button {
@@ -346,7 +350,7 @@
     justify-content: center;
   }
 
-  .footer-heading .navigation-container a {
+  .footer-heading .navigation-container .contact-us-button {
     display: none;
   }
 

@@ -16,25 +16,22 @@ export default class App {
   }
 
   #setupDrawer() {
-    this.#drawerButton.addEventListener("click", () => {
+    this.#drawerButton.addEventListener("click", (event) => {
       this.#drawerNavigation.classList.toggle("open");
     });
 
-    document.body.addEventListener("click", (event) => {
-      const isTargetInsideDrawer = this.#drawerNavigation.contains(
-        event.target
-      );
-      const isTargetInsideButton = this.#drawerButton.contains(event.target);
-
-      if (!(isTargetInsideDrawer || isTargetInsideButton)) {
+    this.#drawerNavigation.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
         this.#drawerNavigation.classList.remove("open");
-      }
 
-      // this.#drawerNavigation.querySelectorAll("a").forEach((link) => {
-      //   if (link.contains(event.target)) {
-      //     this.#drawerNavigation.classList.remove("open");
-      //   }
-      // });
+        this.#drawerNavigation.querySelectorAll("a").forEach((item) => {
+          item.classList.remove("active");
+          item.classList.add("inactive");
+        });
+
+        link.classList.add("active");
+        link.classList.remove("inactive");
+      });
     });
   }
 

@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import { convertBase64ToBlob } from "../../utils";
 import Camera from "../../utils/camera";
 
@@ -141,7 +142,7 @@ export default class Scanner {
     const html = this.#takenDocumentations.reduce((accumulator, picture, currentIndex) => {
       const imageUrl = URL.createObjectURL(picture.blob);
       return accumulator.concat(`
-        <li class="new-form__documentations__outputs-item">
+        <li class="new-form__documentations__outputs-item" data-itemId="${nanoid(16)}">
             <div class="scan-results-image">
               <img src="${imageUrl}" alt="Dokumentasi ke-${currentIndex + 1}" />
             </div>
