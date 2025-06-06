@@ -1,11 +1,11 @@
 import { generateShopItemsTemplate, AddToCartButtonTemplate, successAddToCartButtonTemplate } from '../../template';
 import * as BiorezAPI from '../../data/api';
-import { parseActivePathname } from '../../routes/url-parser';
 import ShopPresenter from './shop-presenter';
 import Database from '../../database';
 
 export default class ShopPage {
   #presenter = null;
+  activeFilter = null;
 
   async render() {
     return `
@@ -18,10 +18,10 @@ export default class ShopPage {
           </div>
 
           <div class="filter-shop-button-container">
-            <button class="filter-shop-button button filter-active">Filter 1</button>
-            <button class="filter-shop-button button">Filter 2</button>
-            <button class="filter-shop-button button">Filter 3</button>
-            <button class="filter-shop-button button">Filter 4</button>
+            <button class="filter-shop-button button filter-active">All Items</button>
+            <button class="filter-shop-button button">Pakaian</button>
+            <button class="filter-shop-button button">Elektronik</button>
+            <button class="filter-shop-button button">Kendaraan</button>
           </div>
 
           <div id="shop-list"></div>
@@ -38,6 +38,35 @@ export default class ShopPage {
     });
 
     await this.#presenter.initialGalleryAndMap();
+
+    const searchInput = document.getElementById('search-shop');
+    searchInput.addEventListener('input', (event) => {
+      const searchTerm = event.target.value.trim().toLowerCase();
+      this.#presenter.filterItems(searchTerm, this.activeFilter);
+    });
+
+    searchInput.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.keyCode === 13) {
+        const searchTerm = event.target.value.trim().toLowerCase();
+        this.#presenter.filterItems(searchTerm, this.activeFilter);
+      }
+    });
+
+    const filterButtons = document.querySelectorAll('.filter-shop-button');
+    this.activeFilter = null;
+
+    filterButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((btn) => btn.classList.remove('filter-active'));
+        button.classList.add('filter-active');
+
+        const filterText = button.textContent.trim().toLowerCase();
+        this.activeFilter = filterText === 'all items' ? null : filterText;
+
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        this.#presenter.filterItems(searchTerm, this.activeFilter);
+      });
+    });
   }
 
   populateShopItemsList(message, items) {
