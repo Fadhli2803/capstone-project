@@ -2,6 +2,7 @@ export default class ShopPresenter {
   #view;
   #apiModel;
   #dbModel;
+  #allItems = [];
 
   constructor({ view, apiModel, dbModel }) {
     this.#view = view;
@@ -12,10 +13,25 @@ export default class ShopPresenter {
   async initialGalleryAndMap() {
     try {
       const response = await this.#apiModel.getAllShopItems();
-      this.#view.populateShopItemsList(response.message, response.data);
+      this.#allItems = response.data;
+      this.#view.populateShopItemsList(response.message, this.#allItems);
     } catch (error) {
       console.error('initialGalleryAndMap: error:', error);
     }
+  }
+
+  filterItems(searchTerm, activeFilter) {
+    let filteredItems = this.#allItems;
+
+    if (searchTerm) {
+      filteredItems = filteredItems.filter((item) => item.itemName.toLowerCase().includes(searchTerm));
+    }
+
+    if (activeFilter && activeFilter !== 'All Items') {
+      filteredItems = filteredItems.filter((item) => item.category && item.category.toLowerCase() === activeFilter);
+    }
+
+    this.#view.populateShopItemsList('Filtered items', filteredItems);
   }
 
   async saveReport(itemId) {

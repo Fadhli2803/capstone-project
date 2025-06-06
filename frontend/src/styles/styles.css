@@ -867,13 +867,13 @@ select {
   justify-content: space-between;
 }
 
-.cart-details__name,
-.cart-details__price {
+.cart-details__name {
   font-size: var(--p-font);
   color: var(--text-color);
 }
 
-.cart-details__price {
+.cart-details__price,
+.cart-details__total-price {
   font-size: var(--p-font);
   color: var(--main-color);
   font-weight: 500;

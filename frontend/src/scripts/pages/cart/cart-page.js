@@ -27,7 +27,7 @@ export default class CartPage {
                 <hr />
                 <div class="cart-details-order cart-details-total">
                   <p class="cart-details__name">Total</p>
-                  <p class="cart-details__price">150K</p>
+                  <p id="cart-details__total-price" class="cart-details__total-price">-</p>
                 </div>
                 <hr />
                 <button class="button green-button cart-details__button">Beli</button>
@@ -56,6 +56,8 @@ export default class CartPage {
       return acc.concat(generateCartDetailsOrderTemplate(item));
     }, '');
 
+    const totalPrice = items.reduce((sum, item) => sum + (item.price || 0), 0);
+
     document.getElementById('cart-list-display').innerHTML = `
       <div class="cart-list-display">${shopItemsHTML}</div>
     `;
@@ -63,6 +65,8 @@ export default class CartPage {
     document.getElementById('cart-details-order-container').innerHTML = `
       <div class="cart-details-order-container">${cartItemHTML}</div>
     `;
+
+    document.getElementById('cart-details__total-price').textContent = `Rp${totalPrice.toLocaleString('id-ID')}`;
   }
 
   #deleteItemFromDatabase() {
