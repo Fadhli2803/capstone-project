@@ -7,7 +7,7 @@ export function generateShopItemsTemplate(item, showCartButton = true) {
       <div class="shop-item__body">
         <h3 class="shop-item__name">${item.itemName}</h3>
         <p class="shop-item__description">Lorem ipsum dolor sit amet.</p>
-        <h3 class="shop-item__price">${item.price}K</h3>
+        <h3 class="shop-item__price">Rp${totalPrice.toLocaleString('id-ID')}</h3>
         ${showCartButton ? `
         <div id="shop-item__cart-button-container" class="shop-item__cart-button-container">
           <button class="shop-item__cart-button button green-button">
@@ -35,7 +35,7 @@ export function generateCartItemsTemplate(item) {
         <p class="cart-item-description">
           Lorem ipsum dolor sit amet.
         </p>
-        <h2 class="cart-item__price">${item.price}K</h3>
+        <h2 class="cart-item__price">Rp${totalPrice.toLocaleString('id-ID')}</h3>
       </div>
     </div>
   `;
@@ -45,7 +45,7 @@ export function generateCartDetailsOrderTemplate(item) {
   return `
     <div class="cart-details-order">
       <p class="cart-details__name">${item.itemName}</p>
-      <p class="cart-details__price">${item.price}K</p>
+      <p class="cart-details__price">Rp${totalPrice.toLocaleString('id-ID')}</p>
     </div>
   `
 }
