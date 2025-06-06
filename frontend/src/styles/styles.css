@@ -382,7 +382,8 @@ main {
 }
 
 .shop-item__image img {
-  width: 60%;
+  width: 100%;
+  aspect-ratio: 3/3;
 }
 
 .shop-item__body .shop-item__name {

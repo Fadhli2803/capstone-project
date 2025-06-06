@@ -328,7 +328,8 @@
 
   /* SHOP & SCANNER*/
   .shop-item__image img {
-    width: 100px;
+    /* width: 100px; */
+    width: 80%;
   }
 
   .scanner-container h1 {
