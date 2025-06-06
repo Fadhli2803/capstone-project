@@ -23,7 +23,7 @@ export default class HomePage {
           </div>
 
           <div class="home-img">
-            <img src="biorezLogo-green.png" alt="hero image" />
+            <img src="images/biorezImages/biorezLogo-green.png" alt="hero image" />
           </div>
         </div>
       </section>
@@ -59,7 +59,7 @@ export default class HomePage {
       <section id="vision-mission">
         <div class="visi-misi-container">
           <div class="vision-mission-image">
-            <img src="biorezLogo-green.png" alt="image-content" />
+            <img src="images/biorezImages/biorezLogo-green.png" alt="image-content" />
           </div>
 
           <div class="vision-mission-body">
