@@ -29,27 +29,4 @@ const getShopItemByIdHandler = (request, h) => {
   return response;
 };
 
-const deleteShopItemByIdHandler = (request, h) => {
-  const { id } = request.params;
-
-  const index = shopItems.findIndex((item) => item.id === id);
-
-  if (index !== -1) {
-    shopItems.splice(index, 1);
-    const response = h.response({
-      status: 'success',
-      message: 'Pesanan berhasil dihapus',
-    });
-    response.code(200);
-    return response;
-  }
-
-  const response = h.response({
-    status: 'fail',
-    message: 'Catatan gagal dihapus.',
-  });
-  response.code(404);
-  return response;
-};
-
-module.exports = { getAllShopItemsHandler, deleteShopItemByIdHandler, getShopItemByIdHandler }
+module.exports = { getAllShopItemsHandler, getShopItemByIdHandler }
